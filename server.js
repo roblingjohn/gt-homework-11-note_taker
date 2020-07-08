@@ -53,11 +53,14 @@ app.post("/api/notes", function(req, res) {
 })
 
 app.delete("/api/notes/:id", function(req, res){
-  notes.splice(res - 1, 1)
+  const value = req.params.id - 1
+  console.log(value)
+  notes.splice(value, 1)
   fs.writeFile(__dirname + "/db/db.json", JSON.stringify(notes), function(err, res){
     if(err) throw err;
   })
   giveIDs();
+  res.json(notes);
 })
 
 app.listen(PORT, function() {
