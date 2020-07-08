@@ -6,14 +6,14 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 const notes = require("./db/db.json");
+// const indexJS = require(__dirname + "/public/assets/js/index.js");
 
 let idConstant = 1;
 
 const giveIDs = function(){
 for(i = 0; i < notes.length; i++){
   notes[i].id = idConstant + i;
-  console.log(notes);
-}
+  }
 }
 
 giveIDs();
@@ -48,7 +48,16 @@ app.post("/api/notes", function(req, res) {
     fs.writeFile(__dirname + "/db/db.json", JSON.stringify(notes), function(err, res){
       if(err) throw err;
     })
+    giveIDs();
     return res.json(newNote);
+})
+
+app.delete("/api/notes/:id", function(req, res){
+  notes.splice(res - 1, 1)
+  fs.writeFile(__dirname + "/db/db.json", JSON.stringify(notes), function(err, res){
+    if(err) throw err;
+  })
+  giveIDs();
 })
 
 app.listen(PORT, function() {
