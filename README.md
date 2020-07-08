@@ -21,7 +21,9 @@ This application allows the user to take notes and save them through the site.
 4. go to localhost:3002 to use the app
 
 ## Usage
-[Insert image here]
+![Screenshot 1](/assets/images/screenshot1.png)
+![Screenshot 2](/assets/images/screenshot2.png)
+![Screenshot 3](/assets/images/screenshot3.png)
 
 On the main page, click "Get Started" to go to the notes page. Once their, you can enter your note title and texts in the field, then click the save icon in the top right corner. You can then click the notes on the left side to bring up the text of the note, or click the trash can icon to delete it.
 
