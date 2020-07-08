@@ -7,6 +7,17 @@ const PORT = process.env.PORT || 3002;
 
 const notes = require("./db/db.json");
 
+let idConstant = 1;
+
+const giveIDs = function(){
+for(i = 0; i < notes.length; i++){
+  notes[i].id = idConstant + i;
+  console.log(notes);
+}
+}
+
+giveIDs();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"))
@@ -22,6 +33,14 @@ app.get("/notes", function(req, res) {
 app.get("/api/notes", function(req, res) {
     return res.json(notes);
   });
+
+app.get("/api/notes/:id", function(req, res){
+  for(i = 0; i < notes.length; i++){
+    if(notes[i].id === i){
+      id = notes[i].id;
+    }
+  }
+})
 
 app.post("/api/notes", function(req, res) {
     let newNote = req.body;
