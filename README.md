@@ -21,6 +21,8 @@ This application allows the user to take notes and save them through the site.
 4. go to localhost:3002 to use the app
 
 ## Usage
+[Deployed App](https://sheltered-springs-82717.herokuapp.com/)
+
 ![Screenshot 1](/assets/images/screenshot1.png)
 ![Screenshot 2](/assets/images/screenshot2.png)
 ![Screenshot 3](/assets/images/screenshot3.png)
